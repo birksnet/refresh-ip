@@ -1,6 +1,6 @@
 const app = require('express')();
 const fconfig = require('fs');
-var content = "   upstream ipmyhouse { mhouse 187.7.154.23:8000 ; }"
+var content = "  upstream ipmyhouse { mhouse 187.7.154.23:8000 ; } "
 
 app.get('/dns-refresh', (req, res) => 
     fconfig.writeFile('/etc/nginx/conf.d/aa-ip-casa.conf', content, err => {
@@ -13,4 +13,4 @@ app.get('/dns-refresh', (req, res) =>
         )
     );
 
-app.listen(80, () => console.log(`API running on port 80!`));
+app.listen(8070, () => console.log(`API running on port 8070!`));
