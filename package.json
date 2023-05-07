@@ -1,0 +1,15 @@
+{
+  "name": "refresh-ip",
+  "version": "1.0.0",
+  "description": "Atualiar ip dinamico no servidor nginx ",
+  "main": "main.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "Felipe M A B Huinka",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.18.2"
+  }
+}
