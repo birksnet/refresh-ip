@@ -1,4 +1,5 @@
 const app = require('express')();
+const { exec } = require('child_process');
 const fconfig = require('fs');
 var content = " upstream ipmyhouse { server 187.7.154.23:8000 ; } "
 const path_config = '/etc/nginx/conf.d/aa-ip-casa.conf'
@@ -20,6 +21,17 @@ app.get('/dns-refresh', function (req, res) {
                 // ficheiro escrito com sucesso
                 }   
             );
+
+        exec('sudo nginx -s reload', (err, stdout, stderr) => {
+            if (err) {
+              //some err occurred
+              console.error(err)
+            } else {
+             // the *entire* stdout and stderr (buffered)
+             console.log(`stdout: ${stdout}`);
+             console.log(`stderr: ${stderr}`);
+            }
+          });
     
     });
 
