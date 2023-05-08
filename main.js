@@ -1,6 +1,6 @@
 const app = require('express')();
 const fconfig = require('fs');
-var content = "  upstream ipmyhouse { mhouse 187.7.154.23:8000 ; } "
+var content = " upstream ipmyhouse { server 187.7.154.23:8000 ; } "
 
 app.get('/dns-refresh', (req, res) => 
     fconfig.writeFile('/etc/nginx/conf.d/aa-ip-casa.conf', content, err => {
